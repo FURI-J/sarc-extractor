@@ -5,18 +5,18 @@
 
 ## Installation
 ``` sh
-npm install --save sarc-extractor
+npm i sarc-extractor
 ```
 ## Usage
 ``` js
 const sarcExtractor = require('sarc-extractor');
-sarcExtractor.extract('<SARC file path>');
+const extractedFileList = sarcExtractor.extract('<SARC file path>');
 // --> The file(s) extracted from the SARC file is output to the same directory as the SARC file.
 ```
 
 Example:
 ``` js
 const sarcExtractor = require('sarc-extractor');
-sarcExtractor.extract('/home/foo/bar.sarc');
-// --> output "/home/foo/bar/baz.msbt"
+const extractedFileList = sarcExtractor.extract('/home/foo/bar.sarc');
+// --> output ["/home/foo/bar/baz.msbt", "/home/foo/bar/qux.msbt"]
 ```

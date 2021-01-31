@@ -7,10 +7,13 @@ class SarcExtractor {
   /**
    * extract file(s) from SARC file.
    * @param {string} sarcFileName - The path of the file to extract.
+   * @return {array} - Path list of extracted file(s).
    */
   extract(sarcFileName) {
     const fs = require('fs');
     const path = require('path');
+
+    const outFileList = [];
 
     const outRootDir = path.join(
         path.dirname(sarcFileName),
@@ -68,10 +71,6 @@ class SarcExtractor {
       const outPath = path.join(outRootDir, fileName);
       const outDir = path.dirname(outPath);
 
-      console.log('');
-      console.log('FileName=' + outPath);
-      console.log('FileSize=' + node.length);
-
       // make parent dir.
       if (
         !fs.existsSync(outDir) &&
@@ -82,7 +81,12 @@ class SarcExtractor {
 
       // output file.
       fs.writeFileSync(outPath, node);
+
+      // add to result list.
+      outFileList.push(outPath);
     }
+
+    return outFileList;
   }
 
   /**
@@ -111,9 +115,10 @@ class SarcExtractor {
 /**
  * extract file(s) from SARC file.
  * @param {string} sarcFileName - The path of the file to extract.
+ * @return {array} - Path list of extracted file(s).
  */
 function extract(sarcFileName) {
-  new SarcExtractor().extract(sarcFileName);
+  return new SarcExtractor().extract(sarcFileName);
 }
 
 module.exports.extract = extract;
