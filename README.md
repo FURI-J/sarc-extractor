@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/sarc-extractor.svg)](https://badge.fury.io/js/sarc-extractor)
+
 # sarc-extractor
 `sarc-extractor` is an npm library that extracts file(s) from [SARC](http://mk8.tockdom.com/wiki/SARC_(File_Format)) file.
 
