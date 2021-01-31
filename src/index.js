@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * SarceExtractor Class.
+ * SarcExtractor Class.
  */
-module.exports = class SarceExtractor {
+class SarcExtractor {
   /**
    * extract file(s) from SARC file.
    * @param {string} sarcFileName - The path of the file to extract.
@@ -107,3 +107,13 @@ module.exports = class SarceExtractor {
       this.buff.readUInt32BE(offset);
   }
 };
+
+/**
+ * extract file(s) from SARC file.
+ * @param {string} sarcFileName - The path of the file to extract.
+ */
+function extract(sarcFileName) {
+  new SarcExtractor().extract(sarcFileName);
+}
+
+module.exports.extract = extract;

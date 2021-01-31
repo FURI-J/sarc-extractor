@@ -1,4 +1,4 @@
 'use strict';
 
-const SarcExtractor = require('./index.js');
-new SarcExtractor().extract(process.argv[2]);
+const sarcExtractor = require('./index.js');
+sarcExtractor.extract(process.argv[2]);
