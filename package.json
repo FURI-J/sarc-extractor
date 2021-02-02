@@ -1,7 +1,7 @@
 {
   "name": "sarc-extractor",
   "version": "1.0.2",
-  "description": "",
+  "description": "Extract file(s) from SARC file.",
   "main": "src/index.js",
   "scripts": {
     "extract": "node src/extract.js",
@@ -20,9 +20,14 @@
   },
   "homepage": "https://github.com/FURI-J/sarc-extractor#readme",
   "devDependencies": {
-    "eslint": "^7.18.0",
+    "eslint": "^7.19.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^7.2.0",
     "prettier": "^2.2.1"
-  }
+  },
+  "dependencies": {},
+  "keywords": [
+    "SARC",
+    "Nintendo"
+  ]
 }
